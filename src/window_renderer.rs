@@ -147,7 +147,7 @@ impl WindowRenderer for VelloWindowRenderer {
                 view_formats: vec![],
             },
             Some(TextureConfiguration {
-                usage: TextureUsages::STORAGE_BINDING | TextureUsages::TEXTURE_BINDING,
+                usage: TextureUsages::TEXTURE_BINDING,
             }),
         ))
         .expect("Error creating surface");
