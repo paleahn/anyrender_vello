@@ -133,11 +133,16 @@ impl WindowRenderer for VelloWindowRenderer {
             window_handle.clone(),
             SurfaceRendererConfiguration {
                 usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
-                formats: vec![TextureFormat::Rgba8Unorm, TextureFormat::Bgra8Unorm],
+                formats: vec![
+                    TextureFormat::Bgra8UnormSrgb,
+                    TextureFormat::Bgra8Unorm,
+                    TextureFormat::Rgba8UnormSrgb,
+                    TextureFormat::Rgba8Unorm,
+                ],
                 width,
                 height,
                 present_mode: PresentMode::AutoVsync,
-                desired_maximum_frame_latency: 2,
+                desired_maximum_frame_latency: 4,
                 alpha_mode: wgpu::CompositeAlphaMode::Auto,
                 view_formats: vec![],
             },
